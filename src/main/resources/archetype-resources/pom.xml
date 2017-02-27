@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>1.7</jdk.version>
         <log4j.version>1.2.17</log4j.version>
         <hadoop.version>2.7.3</hadoop.version>
         <yarn.version>2.7.3</yarn.version>
@@ -20,6 +20,7 @@
         <maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
         <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
         <maven.lombok.plugin.version>1.16.12.0</maven.lombok.plugin.version>
+        <maven.ssh.plugin.version>1.7.3</maven.ssh.plugin.version>
     </properties>
 
     <dependencies>
@@ -118,6 +119,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.epam.maven</groupId>
+                <artifactId>ssh-maven-plugin</artifactId>
+                <version>${maven.ssh.plugin.version}</version>
+                <configuration>
+                    <ssh.server>hdp2.4</ssh.server>
+                    <ssh.deployfile.path>deploy.json</ssh.deployfile.path>
+                </configuration>
             </plugin>
         </plugins>
     </build>

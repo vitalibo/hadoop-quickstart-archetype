@@ -1,0 +1,29 @@
+{
+  "version": "1.7.3",
+  "scripts": [
+    {
+      "name": "word-count",
+      "properties": {
+        "hdfs.input": "/user/root/input",
+        "hdfs.output": "/user/root/output"
+      },
+      "actions": [
+        {
+          "type": "scp",
+          "items": [
+            {
+              "source": "target/${project.build.package}",
+              "target": "."
+            }
+          ]
+        },
+        {
+          "type": "bash",
+          "items": [
+            "yarn jar ${project.build.package} ${package}.driver.WordCountDriver -Dhdfs.input=${hdfs.input} -Dhdfs.output=${hdfs.output}"
+          ]
+        }
+      ]
+    }
+  ]
+}

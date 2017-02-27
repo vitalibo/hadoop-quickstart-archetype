@@ -27,5 +27,11 @@
                 <include>.gitignore</include>
             </includes>
         </fileSet>
+        <fileSet filtered="true">
+            <directory></directory>
+            <includes>
+                <include>deploy.json</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
