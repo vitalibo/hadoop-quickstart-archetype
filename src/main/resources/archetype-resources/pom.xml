@@ -125,7 +125,7 @@
                 <artifactId>ssh-maven-plugin</artifactId>
                 <version>${maven.ssh.plugin.version}</version>
                 <configuration>
-                    <ssh.server>hdp2.4</ssh.server>
+                    <ssh.server>${ssh-server-name}</ssh.server>
                     <ssh.deployfile.path>deploy.json</ssh.deployfile.path>
                 </configuration>
             </plugin>
